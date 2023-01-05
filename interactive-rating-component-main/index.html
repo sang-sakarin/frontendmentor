@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: hsl(216, 12%, 8%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Overpass', sans-serif;
+    }
+
+    h1 {
+      color: hsl(0, 0%, 100%);
+      font-weight: normal;
+      font-size: 22px;
+      margin: 16px 0;
+    }
+
+    .card {
+      background-color: hsl(213, 19%, 18%);
+      max-width: 300px;
+      padding: 1.4rem;
+      border-radius: 16px;
+      box-sizing: border-box;
+    }
+
+    .description {
+      color: hsl(217, 12%, 63%);
+      margin: 6px 0;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .submit {
+      background-color: hsl(25, 97%, 53%);
+      color: hsl(0, 0%, 100%);
+      width: 100%;
+      border: none;
+      border-radius: 16px;
+      padding: 8px;
+      letter-spacing: 1px;
+      margin-top: 10px;
+    }
+
+    .submit:hover {
+      color: hsl(25, 97%, 53%);
+      background-color: hsl(0, 0%, 100%);
+      cursor: pointer;
+    }
+
+    .circle {
+      border-radius: 100%;
+      background-color: hsl(213, 19%, 30%);
+      padding: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 20px;
+      height: 20px;
+      color: hsl(217, 12%, 63%);
+      font-size: 12px;
+    }
+
+    .star {
+      display: flex;
+      justify-content: space-between;
+      margin: 16px 0;
+    }
+
+    .star-default {
+      background-color: hsl(217, 12%, 63%);
+      color: hsl(0, 0%, 100%);
+    }
+
+    .star-choice:hover {
+      background-color: hsl(25, 97%, 53%);
+      color: hsl(0, 0%, 100%);
+      cursor: pointer;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .selected-rating {
+      color: hsl(25, 97%, 53%);
+      background-color: hsl(213, 19%, 30%);
+      border-radius: 12px;
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+
+    .out-rating {
+      margin-top: 20px;
+      margin-bottom: 28px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="card" id="preview">
+      <!-- Rating state start -->
+      <div class="circle">
+        <img src="images/icon-star.svg" alt="star favorite" width="12px">
+      </div>
+
+      <div>
+        <h1>How did we do?</h1>
+      </div>
+
+      <div class="description">
+        Please let us know how we did with your support request. All feedback is appreciated
+        to help us improve our offering!
+      </div>
+
+      <div class="star">
+        <span id="rating_1" class="circle star-choice" onclick="setRating(1)">1</span>
+        <span id="rating_2" class="circle star-choice" onclick="setRating(2)">2</span>
+        <span id="rating_3" class="circle star-choice" onclick="setRating(3)">3</span>
+        <span id="rating_4" class="circle star-choice" onclick="setRating(4)">4</span>
+        <span id="rating_5" class="circle star-choice" onclick="setRating(5)">5</span>
+      </div>
+
+      <button class="submit" onclick="doSubmit()">
+        SUBMIT
+      </button>
+
+      <!-- Rating state end -->
+    </div>
+
+    <div class="card" id="result" hidden>
+      <!-- Thank you state start -->
+
+      <div class="center">
+        <img src="images/illustration-thank-you.svg" alt="credit website" width="40%">
+      </div>
+
+      <div class="center out-rating">
+      <span class="selected-rating center" id="rating">
+        You selected out of 5
+      </span>
+
+      </div>
+
+      <div class="center">
+        <h1> Thank you!</h1>
+      </div>
+
+      <div class="description center">
+        We appreciate you taking the time to give a rating. If you ever need more support,
+        don’t hesitate to get in touch!
+      </div>
+
+      <!-- Thank you state end -->
+
+    </div>
+  </main>
+
+<script>
+  let rating = 0;
+  function showRating() {
+    document.getElementById("rating").innerHTML = `You selected ${rating} out of 5`
+  }
+
+  function setRating(value) {
+    if (rating)
+      document.getElementById(`rating_${rating}`).classList.remove('star-default')
+
+    rating = value
+    document.getElementById(`rating_${value}`).classList.add('star-default')
+  }
+
+  function doSubmit() {
+    showRating()
+    document.getElementById('preview').hidden = true
+    document.getElementById('result').hidden = false
+  }
+
+</script>
+
+</body>
+</html>
