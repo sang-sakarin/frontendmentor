@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .test {
+      color: hsl(225, 100%, 94%);
+      color: hsl(245, 75%, 52%);
+      color: hsl(225, 100%, 98%);
+      color: hsl(224, 23%, 55%);
+      color: hsl(223, 47%, 23%);
+    }
+
+    body {
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 16px;
+      background-image: url("images/pattern-background-desktop.svg");
+      background-color:  hsl(225, 100%, 94%);
+      background-repeat: repeat-x;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background-color: hsl(225, 100%, 98%);;
+      max-width: 320px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 2px 2px 20px 2px rgba(0, 0, 10, .1);
+    }
+
+    .info {
+      padding: 20px 30px;
+      align-items: center;
+    }
+
+    .title {
+      margin-bottom: 12px;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .description {
+      font-size: 14px;
+      font-weight: 400;
+      color: hsl(224, 23%, 55%);
+      line-height: 1.4;
+    }
+
+    .payment {
+      background-color: hsl(245, 75%, 52%);
+      color: hsl(225, 100%, 98%);
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+      margin-top: 20px;
+      box-shadow: 2px 2px 20px 2px rgba(0, 0, 10, .1);
+    }
+
+    .payment:hover {
+      cursor: pointer;
+      background-color: hsl(245, 75%, 70%);
+    }
+
+    .cancel {
+      margin-top: 20px;
+      color: hsl(217, 12%, 63%);
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .cancel:hover {
+      color: black;
+      cursor: pointer;
+    }
+
+    .product {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background-color: hsl(225, 100%, 97%);
+      border-radius: 10px;
+      padding: 12px;
+      margin-top: 12px;
+    }
+
+    .plan-name {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .price {
+      font-size: 14px;
+      margin-top: 4px;
+      color: hsl(217, 12%, 63%);
+    }
+
+    .change {
+      font-size: 12px;
+      margin-left: auto;
+      color: hsl(245, 75%, 52%);
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .change:hover {
+      text-decoration: none;
+      cursor: pointer;
+      color: hsl(245, 75%, 70%);
+    }
+
+  </style>
+</head>
+<body>
+
+  <main class="card">
+    
+    <div>
+      <img src="images/illustration-hero.svg" alt="hero website" width="100%">
+    </div>
+
+    <div class="info">
+      <div class="title center">
+        <h3>
+          Order Summary
+        </h3>
+      </div>
+
+      <div class="description center">
+        You can now listen to millions of songs, audiobooks, and podcasts on any
+        device anywhere you like!
+      </div>
+
+      <div class="product">
+        <div>
+          <img src="images/icon-music.svg" alt="music icon" width="36px">
+        </div>
+
+        <div>
+          <div class="plan-name">
+            Annual Plan
+          </div>
+          <div class="price">
+            $59.99/year
+          </div>
+        </div>
+
+        <div class="change">
+          Change
+        </div>
+      </div>
+
+      <div>
+        <button class="payment">
+          Proceed to Payment
+        </button>
+
+      </div>
+
+      <div class="cancel center">
+        Cancel Order
+      </div>
+    </div>
+  </main>
+
+
+</body>
+</html>
