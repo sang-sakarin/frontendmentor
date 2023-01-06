@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Stats preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root {
+      --dark-blue: hsl(233, 47%, 7%);
+      --desaturated-blue: hsl(244, 38%, 16%);
+      --violet: hsl(277, 64%, 61%);
+      --white: hsl(0, 0%, 100%);
+      --white-p: hsla(0, 0%, 100%, 0.75);
+      --white-h: hsla(0, 0%, 100%, 0.6);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--dark-blue);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-size: 15px;
+    }
+
+    img {
+      object-fit: cover;
+      height: -webkit-fill-available;
+    }
+
+    .card {
+      background-color: var(--desaturated-blue);
+      max-width: 1000px;
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .item {
+      flex-basis: 50%;
+    }
+
+    .info {
+      padding: 56px;
+      box-sizing: border-box;
+    }
+
+    .sub-title {
+      color: var(--violet);
+    }
+
+    .title {
+      color: var(--white);
+    }
+
+    .description {
+      margin: 30px 0;
+      color: var(--white-p);
+      line-height: 1.6;
+    }
+
+    .stat {
+      text-transform: uppercase;
+      display: flex;
+      margin-top: 70px;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .state-vote {
+      color: var(--white);
+    }
+
+    .state-info {
+      color: var(--white-h);
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+
+    @media only screen and (max-width: 375px) {
+      .card {
+        width: 90%;
+        flex-direction: column-reverse;
+        margin: 24px 0;
+      }
+
+      .info {
+        padding: 32px;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        font-size: 20px;
+        text-align: center;
+        line-height: 1.6;
+      }
+
+      .description {
+        text-align: center;
+        font-size: 11px;
+      }
+
+      .stat {
+        align-items: center;
+        flex-direction: column;
+        margin-top: 50px;
+        gap: 40px;
+      }
+
+      .state-vote {
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .state-info {
+        color: var(--white-h);
+        margin-top: 6px;
+        font-size: 10px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="info item">
+      <div class="title">
+        <h1>
+          Get <span class="sub-title">insights</span> that help your business grow.
+        </h1>
+      </div>
+
+      <div class="description">
+        Discover the benefits of data analytics and make better decisions regarding revenue, customer
+        experience, and overall efficiency.
+      </div>
+
+      <div class="stat">
+        <div>
+          <div class="state-vote"><h2>10k+</h2></div>
+          <div class="state-info">companies</div>
+        </div>
+        <div>
+          <div class="state-vote"><h2>314</h2></div>
+          <div class="state-info">templates</div>
+        </div>
+        <div>
+          <div class="state-vote"><h2>12m+</h2></div>
+          <div class="state-info">queries</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="item ">
+      <picture>
+        <source srcset="images/image-header-desktop.jpg" media="(min-width: 376px)">
+        <source srcset="images/image-header-mobile.jpg" media="(min-width: 375px)">
+        <img srcset="images/image-header-mobile.jpg" alt="card website" width="100%">
+      </picture>
+    </div>
+  </main>
+</body>
+</html>
