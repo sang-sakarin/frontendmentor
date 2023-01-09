@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Profile card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    :root {
+      --cyan: hsl(185, 75%, 39%);
+      --dark-desaturated-blue: hsl(229, 23%, 23%);
+      --grayish-blue: hsl(227, 10%, 46%);
+      --gray: hsl(0, 0%, 59%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 18px;
+      font-family: 'Kumbh Sans', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: var(--cyan);
+      background-image: url("images/bg-pattern-top.svg"), url("images/bg-pattern-bottom.svg");
+      background-repeat: no-repeat, no-repeat;
+      background-position: -70% 400%, 130% -450%;
+      padding: 15px;
+    }
+
+    hr {
+      border: 1px solid var(--gray);
+      border-top: none;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 2px 2px 20px 2px rgba(0, 0, 10, .1);
+    }
+
+    .info {
+      background-color: white;
+      text-align: center;
+    }
+
+    .info-detail {
+      margin-top: 4rem;
+    }
+
+    img {
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      user-drag: none;
+    }
+
+    .stat {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 1.5rem 0;
+    }
+
+    .state-info {
+      font-size: 0.7rem;
+    }
+
+    .profile {
+      position: absolute;
+      top: 5em;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100px; /* Need a specific value to work */
+      border-radius: 50%;
+      /*border-image-width: 10px;*/
+      /*border-radius: 50%;*/
+      border: 5px solid white;
+      /*border-image-c: black;*/
+    }
+
+    .title {
+      font-weight: bold;
+      margin: 0 0.25rem;
+    }
+
+    .city {
+      font-size: 0.8rem;
+      margin: 0.5rem;
+    }
+
+    .color-gray {
+      color: var(--gray);
+    }
+
+    .color-dask-blue {
+      color: var(--dark-desaturated-blue);
+    }
+
+    .background{
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card info">
+      <img src="images/bg-pattern-card.svg" alt="pattern website">
+      <img class="profile" src="images/image-victor.jpg">
+      <div class="info-detail">
+        <span class="title color-dask-blue" >Victor Crest</span>
+        <span class="color-gray">26</span>
+      </div>
+
+      <div class="color-gray city">
+        London
+      </div>
+
+      <hr>
+
+      <div class="stat">
+        <div>
+          <h4 class="color-dask-blue">80K</h4>
+          <span class="state-info color-gray">Followers</span>
+        </div>
+
+        <div>
+          <h4 class="color-dask-blue">803K</h4>
+          <span class="state-info color-gray">Likes</span>
+        </div>
+
+        <div>
+          <h4 class="color-dask-blue">1.4K</h4>
+          <span class="state-info color-gray">Photos</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
