@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Four card feature section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root {
+      --red: hsl(0, 78%, 62%);
+      --cyan: hsl(180, 62%, 55%);
+      --orange: hsl(34, 97%, 64%);
+      --blue: hsl(212, 86%, 64%);
+      --very-dark-blue: hsl(234, 12%, 34%);
+      --grayish-blue2: hsl(229, 6%, 66%);
+      --very-light-gray: hsl(0, 0%, 98%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 15px;
+      background-color: var(--very-light-gray);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      padding: 0 1rem;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 5rem;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: lighter;
+      color: var(--very-dark-blue);
+    }
+
+    h2 {
+      font-size: 2.1rem;
+      color: var(--very-dark-blue);
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      color: var(--very-dark-blue);
+    }
+
+    .info {
+      max-width: 35em;
+      text-align: center;
+    }
+
+    .description {
+      margin-top: 1rem;
+      color: var(--grayish-blue2);
+    }
+
+    .c-detail {
+      margin-top: 0.8rem;
+      color: var(--grayish-blue2);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .topic {
+      display: flex;
+      gap: 2rem;
+      margin: 4rem 0;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      display: flex;
+      box-shadow: 2px 2px 20px 2px rgba(0, 0, 10, .1);
+      padding: 2rem;
+      max-width: 20em;
+      height: 200px;
+      flex-direction: column;
+      border-radius: 8px;
+      border-top: 5px solid;
+    }
+
+    .sub-card {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .topic #supervisor {
+      border-top-color: var(--cyan);
+    }
+
+    .topic #team {
+      border-top-color: var(--red);
+    }
+
+    .topic #karma {
+      border-top-color: var(--orange);
+    }
+
+    .topic #calculator {
+      border-top-color: var(--blue);
+    }
+
+    .topic-icon {
+      width: 28%;
+      align-self: flex-end;
+      height: auto;
+      margin-top: auto;
+    }
+
+
+    @media only screen and (max-width: 1200px) {
+      .sub-card {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <section class="info">
+      <h1>Reliable, efficient delivery</h1>
+      <h2>Powered by Technology</h2>
+      <div class="description">
+        Our Artificial Intelligence powered tools use millions of project data points to ensure that your project is successful
+      </div>
+    </section>
+
+    <section class="topic">
+      <div id="supervisor" class="card">
+        <h3>Supervisor</h3>
+        <div class="c-detail">
+          Monitors activity to identify project roadblocks
+        </div>
+        <img src="images/icon-supervisor.svg" class="topic-icon">
+      </div>
+
+      <div class="sub-card">
+        <div id="team" class="card">
+          <h3>Team Builder</h3>
+          <div class="c-detail">
+            Scans our talent network to create the optimal team for your project
+          </div>
+          <img src="images/icon-team-builder.svg" class="topic-icon">
+        </div>
+
+        <div id="karma" class="card">
+          <h3>Karma</h3>
+          <div class="c-detail">
+            Regularly evaluates our talent to ensure quality
+          </div>
+          <img src="images/icon-karma.svg" class="topic-icon">
+        </div>
+      </div>
+
+      <div id="calculator" class="card">
+        <h3>Calculator</h3>
+        <div class="c-detail">
+          Uses data from past projects to provide better delivery estimates
+        </div>
+        <img src="images/icon-calculator.svg" class="topic-icon">
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
