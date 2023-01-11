@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+    }
+
+    :root {
+      --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+      --soft-red: hsl(14, 88%, 65%);
+      --soft-violet: hsl(273, 75%, 66%);
+      --soft-blue: hsl(240, 73%, 65%);
+      --very-dark-grayish-blue: hsl(237, 12%, 33%);
+      --dark-grayish-blue: hsl(240, 6%, 50%);
+      --light-grayish-blue: hsl(240, 5%, 91%);
+    }
+
+    body {
+      font-family: 'Kumbh Sans', sans-serif;
+      background: linear-gradient(var(--soft-violet), var(--soft-blue)) no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    main {
+      background-color: white;
+      width: 1000px;
+      border-radius: 12px;
+      display: flex;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+    }
+
+    hr {
+      border: 1px solid var(--light-grayish-blue);
+      border-top: none;
+      margin: 1.5rem 0;
+    }
+
+    .faq {
+      padding: 2rem;
+      color: var(--very-dark-desaturated-blue);
+    }
+
+    .faq-body {
+      margin-top: 2rem;
+      margin-right: 8rem;
+    }
+
+    .question {
+      color: var(--very-dark-grayish-blue);
+      display: flex;
+    }
+
+    .question:hover {
+      color: var(--soft-red);
+      cursor: pointer;
+    }
+
+    .answer {
+      color: var(--dark-grayish-blue);
+      margin-top: 1rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .arrow {
+      align-self: flex-end;
+      margin-left: auto;
+      padding-left: 6rem;
+    }
+
+    .rotateimg180 {
+      /*-webkit-transform:rotate(180deg);*/
+      /*-moz-transform: rotate(180deg);*/
+      /*-ms-transform: rotate(180deg);*/
+      /*-o-transform: rotate(180deg);*/
+      transform: rotate(180deg);
+    }
+
+    .image {
+      position: relative;
+    }
+
+    .image img {
+      position: absolute;
+    }
+
+  </style>
+</head>
+<body>
+ <main>
+   <div>
+     <div class="image">
+       <img src="images/illustration-woman-online-desktop.svg" alt="women online">
+       <img src="images/bg-pattern-desktop.svg" alt="" width="100%">
+     </div>
+   </div>
+   <div class="faq">
+     <h1>FAQ</h1>
+     <div class="faq-body">
+       <div>
+         <div class="question">
+           <div>How many team members can I invite?</div>
+           <div class="arrow">
+             <img src="images/icon-arrow-down.svg" class="rotateimg180" alt="icon arrow">
+           </div>
+         </div>
+         <div class="answer hidden">
+           You can invite up to 2 additional users on the Free plan. There is no limit on
+           team members for the Premium plan.
+         </div>
+         <hr>
+       </div>
+
+       <div>
+         <div class="question">
+           <div>What is the maximum file upload size?</div>
+           <div class="arrow">
+             <img src="images/icon-arrow-down.svg" alt="icon arrow">
+           </div>
+         </div>
+         <div class="answer hidden">
+           No more than 2GB. All files in your account must fit your allotted storage space.
+         </div>
+         <hr>
+       </div>
+
+       <div>
+         <div class="question">
+           <div>How do I reset my password?</div>
+           <div class="arrow">
+             <img src="images/icon-arrow-down.svg" alt="icon arrow">
+           </div>
+         </div>
+         <div class="answer hidden">
+           Click “Forgot password” from the login page or “Change password” from your profile page.
+           A reset link will be emailed to you.
+         </div>
+         <hr>
+       </div>
+
+       <div>
+         <div class="question">
+           <div>Can I cancel my subscription?</div>
+           <div class="arrow">
+             <img src="images/icon-arrow-down.svg" alt="icon arrow">
+           </div>
+         </div>
+         <div class="answer hidden">
+           Yes! Send us a message and we’ll process your request no questions asked.
+         </div>
+         <hr>
+       </div>
+
+       <div>
+         <div class="question">
+           <div>Do you provide additional support?</div>
+           <div class="arrow">
+             <img src="images/icon-arrow-down.svg" alt="icon arrow">
+           </div>
+         </div>
+         <div class="answer hidden">
+           Chat and email support is available 24/7. Phone lines are open during normal business hours.
+         </div>
+         <hr>
+       </div>
+     </div>
+
+   </div>
+ </main>
+ <script>
+   let elements = document.getElementsByClassName("question")
+
+
+   for(let i=0; i < elements.length; i++) {
+     elements[i].addEventListener("click", () => {
+       let answerElements = document.getElementsByClassName("answer")
+
+       let open = elements[i].classList.contains("bold")
+
+       if (open) {
+         elements[i].classList.remove("bold")
+         answerElements[i].classList.add("hidden")
+       } else {
+         elements[i].classList.add("bold")
+         answerElements[i].classList.remove("hidden")
+       }
+     });
+   }
+
+   // function myFunction() {
+   //   // alert ("Hello World!");
+   //   let elements = document.getElementsByClassName("answer")
+   //   for(let i=0; i < elements.length; i++) {
+   //     elements[i].classList.remove("hidden")
+   //     elements[i].classList.add("bold")
+   //   }
+   //
+   // }
+ </script>
+</body>
+</html>
